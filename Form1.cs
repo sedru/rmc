@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Remote_Commander
@@ -34,11 +28,6 @@ namespace Remote_Commander
             });
             dataGridView1.DataSource = lstComputers;
             
-        }
-
-        private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void DataGridView1_MouseClick(object sender, MouseEventArgs e)
