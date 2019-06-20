@@ -47,10 +47,19 @@ namespace Remote_Commander
 
         private void GetCpuInfoToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
+            // Initializes the variables to pass to the MessageBox.Show method.
+            string computerName = dataGridView1.CurrentCell.Value;
+            string caption = "Error Detected in Input";
+            MessageBoxButtons buttons = MessageBoxButtons.OK;
+            DialogResult result;
+
+            // Displays the MessageBox.
+            result = MessageBox.Show(computerName, caption, buttons);
+
             System.Diagnostics.Process process = new System.Diagnostics.Process();
             process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-            process.StartInfo.FileName = "cmd.exe";
-            process.StartInfo.Arguments = "psexec /C copy /b Image1.jpg + Archive.rar Image2.jpg";
+            process.StartInfo.FileName = "psexec";
+            process.StartInfo.Arguments = " \\" + computerName + " cmd /C ipconfig /all";
             process.Start();
         }
     }
