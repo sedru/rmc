@@ -31,9 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.getCpuInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -46,33 +44,20 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(776, 351);
             this.dataGridView1.TabIndex = 0;
-            
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripComboBox1,
-            this.toolStripMenuItem2,
-            this.copyToolStripMenuItem});
+            this.getCpuInfoToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(182, 75);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 48);
             // 
-            // toolStripComboBox1
+            // getCpuInfoToolStripMenuItem
             // 
-            this.toolStripComboBox1.Name = "toolStripComboBox1";
-            this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(181, 22);
-            this.toolStripMenuItem2.Text = "123423432";
-            // 
-            // copyToolStripMenuItem
-            // 
-            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
-            this.copyToolStripMenuItem.Text = "Copy";
+            this.getCpuInfoToolStripMenuItem.Name = "getCpuInfoToolStripMenuItem";
+            this.getCpuInfoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.getCpuInfoToolStripMenuItem.Text = "GetCpuInfo";
+            this.getCpuInfoToolStripMenuItem.Click += new System.EventHandler(this.GetCpuInfoToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -92,9 +77,7 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem getCpuInfoToolStripMenuItem;
     }
 }
 

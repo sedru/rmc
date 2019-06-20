@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace Remote_Commander
@@ -19,36 +18,10 @@ namespace Remote_Commander
             lstComputers.Add(new Computers()
             {
                 ID = 1,
-                Name = "TTN-NCH-RZHS01"
-            });
-            lstComputers.Add(new Computers()
-            {
-                ID = 2,
-                Name = "TTN-NCH-RZHS02"
+                Name = "TTN-NCH-RZHS10"
             });
             dataGridView1.DataSource = lstComputers;
             
-        }
-
-        private void DataGridView1_MouseClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Right)
-            {
-                ContextMenu m = new ContextMenu();
-                m.MenuItems.Add(new MenuItem("Cut"));
-                m.MenuItems.Add(new MenuItem("Copy"));
-                m.MenuItems.Add(new MenuItem("Paste"));
-
-                int currentMouseOverRow = dataGridView1.HitTest(e.X, e.Y).RowIndex;
-
-                if (currentMouseOverRow >= 0)
-                {
-                    m.MenuItems.Add(new MenuItem(string.Format("Do something to row {0}", currentMouseOverRow.ToString())));
-                }
-
-                m.Show(dataGridView1, new Point(e.X, e.Y));
-
-            }
         }
 
         private void DataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -70,6 +43,15 @@ namespace Remote_Commander
                     this.contextMenuStrip1.Show(dataGridView1, relativeMousePosition);
                 }
             }
+        }
+
+        private void GetCpuInfoToolStripMenuItem_Click(object sender, System.EventArgs e)
+        {
+            System.Diagnostics.Process process = new System.Diagnostics.Process();
+            process.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+            process.StartInfo.FileName = "cmd.exe";
+            process.StartInfo.Arguments = "psexec /C copy /b Image1.jpg + Archive.rar Image2.jpg";
+            process.Start();
         }
     }
 }
